@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+		//ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+		
+			var a=[];
+			for(var i=0;i<10;i++){
+				a[i]=function(){
+					console.log(i);
+				};
+			};
+			a[6]();//10
+			
+			var a = [];
+			for (let i = 0; i < 10; i++) {
+			  a[i] = function () {
+			    console.log(i);
+			  };
+			}
+			a[6](); // 6
+			
+		//let不像var那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。
+		
+		// var 的情况
+		console.log(foo); // 输出undefined
+		var foo = 2;
+		
+		// let 的情况
+//		console.log(bar); // 报错
+//		let bar = 2;
+		
+		
+		var tmp = 123;
+
+		if (true) {
+		  let tmp = 'abc';
+		  console.log(tmp)
+		}
+		console.log(tmp)
+		</script>
+	</body>
+</html>
